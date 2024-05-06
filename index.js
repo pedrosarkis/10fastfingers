@@ -1,7 +1,7 @@
 let currentWordIndex = 0;
 const spans = document.getElementById('word-box').getElementsByTagName('span')
 const input = document.getElementById('input')
-let initialOFfset = 0
+let initialOffset = 0
 
 const createWordCounter = () => {
 	let corretWords = 0
@@ -24,6 +24,11 @@ const generateRandomWords = async () => {
 	return randomWords
 }
 
+const setInitialOffset = () => {
+	console.log('lol')
+	initialOffset = document.getElementsByTagName('span')[0].offsetLeft
+}
+
 const generateSpanWithWords = (words) => {
 	const wordsDiv = document.getElementById('word-box')
 	words.forEach(word => {
@@ -31,7 +36,7 @@ const generateSpanWithWords = (words) => {
 		span.innerHTML = word
 		wordsDiv.append(span)
 	});
-	initialOFfset = document.getElementsByTagName('span')[0].offsetLeft
+	setInitialOffset()
 }
 (async ()=> {
 	const words = await generateRandomWords()
@@ -48,7 +53,7 @@ const handleInput = (ev) => {
 		resetElementValue(input)
 		currentWordIndex++
 		startClock()
-		if(spans[currentWordIndex].offsetLeft === initialOFfset) scrollDown()
+		if(spans[currentWordIndex].offsetLeft === initialOffset) scrollDown()
 		highlightWord(currentWordIndex)
 	}
 	if(input.value.trim() !== '' ) {
@@ -129,3 +134,5 @@ const showResult = ({totalWords, correctWords, wrongWords, accuracyPercentage}) 
 
 
 document.getElementById('input').addEventListener('keyup', handleInput)
+
+window.addEventListener('resize', setInitialOffset)
