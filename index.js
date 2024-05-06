@@ -105,7 +105,7 @@ const stopGame = () => {
 }
 
 const scrollDown = () => {
-	document.getElementById('word-box').scrollTop += 25
+	document.getElementById('word-box').scrollTop += 26
 }
 
 const mountResult = (wordsCounter) => {
