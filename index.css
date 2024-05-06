@@ -4,6 +4,7 @@ body {
     color: #333;
     margin: 0;
     padding: 20px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .container {
@@ -23,14 +24,15 @@ body {
     border: 1px solid black;
     overflow-wrap: break-word;
     overflow: hidden;
-    height: 3em;
+    height: 3.1em;
     line-height: 24px;
 }
 
 span {
     margin: 10px;
+    font-size: 26px;
     white-space: nowrap;
-    font-size: large;
+   
 }
 
 input[type="text"] {
@@ -46,15 +48,15 @@ input[type="text"]:focus {
 }
 
 .highlightGray {
-    background-color: gray;
+    background-color: #dddddd;
 }
 
 .highlightGreen {
-    background-color: green;
+    color: green;
 }
 
 .highlightRed {
-    background-color: red;
+    color: red;
 }
 
 #result {
