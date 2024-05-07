@@ -11,7 +11,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 50%;  /* Preservando o tamanho original */
+    width: 50%;
     margin: auto;
     background-color: white;
     padding: 20px;
@@ -60,7 +60,7 @@ input[type="text"]:focus {
 }
 
 #result {
-    width: 100%;  /* Largura ajustada para 100% para manter dentro do contêiner */
+    width: 100%;
     border: 1px solid black;
     display: none;
     padding: 10px;
